@@ -1,6 +1,6 @@
 # Ubuntu-quickstart
 
-This quickstart file isntalls all the basic software you would need.\
+This quickstart file installs all the basic software you would need.\
 You can fork this repository and add or remove software as you see fit.
 
 ## Table of Contents
