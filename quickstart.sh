@@ -1,4 +1,4 @@
-# !/bin/bash
+#!/bin/bash
 
 # Nala Install
 ni () {
@@ -21,10 +21,9 @@ sudo nala fetch
 
 echo "Add repositories"
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
-sudo add-apt-repository universe
-sudo add-apt-repository multiverse Steam
+sudo add-apt-repository multiverse # Required by: Steam
 
-sudo dpkg --add-architecture i386
+sudo dpkg --add-architecture i386 # Required by: Steam
 
 sudo nala update && sudo nala upgrade
 
