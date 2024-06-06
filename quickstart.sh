@@ -1,5 +1,7 @@
+# !/bin/bash
 
-ai () {
+# Nala Install
+ni () {
     sudo nala update
     sudo nala install -y $@
 }
@@ -29,7 +31,7 @@ sudo nala update && sudo nala upgrade
 # ---------------------------------------
 
 echo "Install necessary packages"
-ai \
+ni \
     curl \
     wget \
     git \
@@ -46,7 +48,7 @@ ai \
 echo "Brave (beta)"
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-beta-archive-keyring.gpg https://brave-browser-apt-beta.s3.brave.com/brave-browser-beta-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-beta-archive-keyring.gpg] https://brave-browser-apt-beta.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-beta.list
-ai brave-browser-beta
+ni brave-browser-beta
 
 echo "Remove Firefox"
 sudo apt remove -y firefox
@@ -56,7 +58,7 @@ sudo apt remove -y firefox
 echo "Spotify"
 curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-ai spotify-client
+ni spotify-client
 
 echo "Spicetfiy"
 source ~/.bashrc
@@ -109,7 +111,7 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 #Install Docker:
-ai docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+ni docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 #Run the hello-world container to verify that Docker is installed correctly:
 sudo docker run hello-world
@@ -118,7 +120,8 @@ sudo docker run hello-world
 
 echo "Snap packages"
 
-function si() {
+# Snap Install
+si () {
     for pacakge in $@; do
         sudo snap install $pacakge
     done
@@ -132,7 +135,7 @@ si mailspring
 echo "DisplayLink"
 wget -O displaylink.deb https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
 sudo nala install -y ./displaylink.deb
-ai displaylink-driver
+ni displaylink-driver
 rm ./displaylink.deb
 
 # ---------------------------------------

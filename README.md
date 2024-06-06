@@ -20,7 +20,7 @@ You can fork this repository and add or remove software as you see fit.
 Run the one-liner command to install all the basic software you need on your Ubuntu machine.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/RasseTheBoy/Ubuntu-quickstart/main/quickstart_script.sh | sh
+curl -fsSL https://raw.githubusercontent.com/RasseTheBoy/Ubuntu-quickstart/main/quickstart.sh | sh
 ```
 
 ## Manual Installation
