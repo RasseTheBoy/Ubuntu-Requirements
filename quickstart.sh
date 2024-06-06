@@ -1,5 +1,5 @@
 
-function ai {
+ai () {
     sudo nala update
     sudo nala install -y $@
 }
@@ -90,7 +90,8 @@ for extension in \
     Gruntfuggly.todo-tree \
     ms-python.python \
     ms-vscode-remote.remote-ssh\
-    DavidAnson.vscode-markdownlint
+    DavidAnson.vscode-markdownlint \
+    yzhang.markdown-all-in-one
 do code --install-extension $extension; done
 
 # ---------------------------------------
