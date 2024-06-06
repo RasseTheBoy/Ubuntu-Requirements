@@ -15,15 +15,13 @@ sudo apt update && sudo apt upgrade
 
 echo "Nala"
 sudo apt install nala
-sudo nala fetch
+# sudo nala fetch
 
 # ---------------------------------------
 
 echo "Add repositories"
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
 sudo add-apt-repository multiverse # Required by: Steam
-
-sudo dpkg --add-architecture i386 # Required by: Steam
 
 sudo nala update && sudo nala upgrade
 
@@ -39,7 +37,6 @@ ni \
     btop \
     gnome-tweaks \
     gnome-shell-extension-manager \
-    steam-installer \
     ca-certificates
 
 # ---------------------------------------
@@ -139,9 +136,11 @@ rm ./displaylink.deb
 
 # ---------------------------------------
 
-sudo nala autoremove
+echo "Steam"
+sudo dpkg --add-architecture i386
+ni steam-installer
+steam
 
 # ---------------------------------------
 
-echo "Steam"
-steam
+sudo nala autoremove
