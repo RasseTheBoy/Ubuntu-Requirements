@@ -9,13 +9,13 @@ ni () {
 # ---------------------------------------
 
 echo "Update and upgrade"
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 
 # ---------------------------------------
 
 echo "Nala"
 sudo apt install nala
-# sudo nala fetch
+sudo nala fetch
 
 # ---------------------------------------
 
@@ -23,7 +23,7 @@ echo "Add repositories"
 sudo add-apt-repository ppa:zhangsongcui3371/fastfetch
 sudo add-apt-repository multiverse # Required by: Steam
 
-sudo nala update && sudo nala upgrade
+sudo nala update && sudo nala upgrade -y 
 
 # ---------------------------------------
 
@@ -75,7 +75,7 @@ rm ./lutris*.deb
 
 echo "VS Code"
 wget -O vscode.deb https://update.code.visualstudio.com/latest/linux-deb-x64/stable
-sudo nala install ./vscode.deb
+sudo nala install -y ./vscode.deb
 rm ./vscode.deb
 
 echo "VS Code extensions"
@@ -94,6 +94,35 @@ do code --install-extension $extension; done
 
 # ---------------------------------------
 
+echo "Snap packages"
+
+# Snap Install
+si () {
+    for pacakge in $@; do
+        sudo snap install $pacakge
+    done
+}
+
+sudo snap install blender --classic
+si mailspring
+
+# ---------------------------------------
+
+echo "Steam"
+sudo dpkg --add-architecture i386
+ni steam-installer
+steam
+
+# ---------------------------------------
+
+echo "DisplayLink"
+wget -O displaylink.deb https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
+sudo nala install -y ./displaylink.deb
+ni displaylink-driver
+rm ./displaylink.deb
+
+# ---------------------------------------
+
 echo "Docker"
 # Add Docker's official GPG key:
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -109,37 +138,10 @@ echo \
 #Install Docker:
 ni docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-#Run the hello-world container to verify that Docker is installed correctly:
-sudo docker run hello-world
-
-# ---------------------------------------
-
-echo "Snap packages"
-
-# Snap Install
-si () {
-    for pacakge in $@; do
-        sudo snap install $pacakge
-    done
-}
-
-sudo snap install blender --classic
-si mailspring
-
-# ---------------------------------------
-
-echo "DisplayLink"
-wget -O displaylink.deb https://www.synaptics.com/sites/default/files/Ubuntu/pool/stable/main/all/synaptics-repository-keyring.deb
-sudo nala install -y ./displaylink.deb
-ni displaylink-driver
-rm ./displaylink.deb
-
-# ---------------------------------------
-
-echo "Steam"
-sudo dpkg --add-architecture i386
-ni steam-installer
-steam
+# Add your user to the docker group:
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
 
 # ---------------------------------------
 

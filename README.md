@@ -1,7 +1,11 @@
 # Ubuntu-quickstart
 
-This quickstart file installs all the basic software you would need.\
+This quickstart file installs all the basic software you would need for Ubuntu (24.04).\
 You can fork this repository and add or remove software as you see fit.
+
+[![GitHub release](https://img.shields.io/github/release/RasseTheBoy/Ubuntu-quickstart?include_prereleases=&sort=semver&color=blue)](https://github.com/RasseTheBoy/Ubuntu-quickstart/releases/)
+[![24.04](https://img.shields.io/badge/24.04-working-green)](https://github.com/RasseTheBoy/Ubuntu-quickstart/releases/)
+[![>24.04](https://img.shields.io/badge/%3E24.04-not%20tested-red)](https://github.com/RasseTheBoy/Ubuntu-quickstart/releases/)
 
 ## Table of Contents
 
@@ -17,10 +21,13 @@ You can fork this repository and add or remove software as you see fit.
 
 ## One-liner command
 
-Run the one-liner command to install all the basic software you need on your Ubuntu machine.
+Run these commands in your terminal to install all the basic software you need on your Ubuntu machine.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/RasseTheBoy/Ubuntu-quickstart/main/quickstart.sh | sh
+curl -o quickstart_test.sh -fsSL https://raw.githubusercontent.com/RasseTheBoy/Ubuntu-quickstart/main/quickstart.sh
+chmod +x quickstart_test.sh
+./quickstart_test.sh
+rm quickstart_test.sh
 ```
 
 ## Manual Installation
@@ -32,7 +39,7 @@ This is a step-by-step tutorial on how to install all the basic software you nee
 Install the `quickstart.sh` file to your home machine.
 
 ```bash
-wget https://raw.githubusercontent.com/RasseTheBoy/Ubuntu-quickstart/main/quickstart.sh -O quickstart.sh
+curl -o quickstart_test.sh -fsSL https://raw.githubusercontent.com/RasseTheBoy/Ubuntu-quickstart/main/quickstart.sh
 ```
 
 ### Step 2: Make the file executable

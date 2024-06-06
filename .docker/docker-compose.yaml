@@ -1,0 +1,10 @@
+---
+services:
+  ubuntu:
+    image: ubuntuquickstart
+    container_name: ubuntu
+    tty: true
+    stdin_open: true
+    volumes:
+      - ../:/app
+    working_dir: /app
