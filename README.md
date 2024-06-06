@@ -17,6 +17,7 @@ You can fork this repository and add or remove software as you see fit.
     - [Step 2: Make the file executable](#step-2-make-the-file-executable)
     - [Step 3: Run the file](#step-3-run-the-file)
     - [Step 4: Wait](#step-4-wait)
+    - [(Step 4.1: Optional)](#step-41-optional)
     - [Step 5: Done](#step-5-done)
 
 ## One-liner command
@@ -63,6 +64,14 @@ Run the file by running the following command:
 Wait for the script to finish running. It will take a while.\
 The download speed will depend on your internet connection;
 and the installation speed will depend on your machine's specs.
+
+### (Step 4.1: Optional)
+
+If you want to remove the file after running it, run the following command:
+
+```bash
+rm quickstart.sh
+```
 
 ### Step 5: Done
 
