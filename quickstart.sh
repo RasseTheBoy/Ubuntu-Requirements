@@ -41,6 +41,13 @@ ni \
 
 # ---------------------------------------
 
+echo "Set background"
+sudo wget -O /usr/share/backgrounds/black.png https://htmlcolorcodes.com/assets/images/colors/black-color-solid-background-1920x1080.png
+gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/black.png
+gsettings set org.gnome.desktop.background picture-uri-dark file:////usr/share/backgrounds/black.png
+
+# ---------------------------------------
+
 echo "Brave (beta)"
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-beta-archive-keyring.gpg https://brave-browser-apt-beta.s3.brave.com/brave-browser-beta-archive-keyring.gpg
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-beta-archive-keyring.gpg] https://brave-browser-apt-beta.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-beta.list
