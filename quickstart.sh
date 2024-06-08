@@ -37,6 +37,7 @@ ni \
     btop \
     gnome-tweaks \
     gnome-shell-extension-manager \
+    xdotool \
     ca-certificates
 
 # ---------------------------------------
