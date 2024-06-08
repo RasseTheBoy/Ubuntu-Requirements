@@ -50,8 +50,8 @@ gsettings set org.gnome.desktop.background picture-uri-dark file:////usr/share/b
 
 # ---------------------------------------
 
-echo "Install macros"
-sudo curl -fsSL https://raw.githubusercontent.com/RasseTheBoy/Ubuntu-quickstart/main
+# echo "Install macros"
+# sudo curl -fsSL https://raw.githubusercontent.com/RasseTheBoy/Ubuntu-quickstart/main
 
 # ---------------------------------------
 
