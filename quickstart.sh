@@ -38,7 +38,8 @@ ni \
     gnome-tweaks \
     gnome-shell-extension-manager \
     xdotool \
-    ca-certificates
+    ca-certificates\
+    flatpak 
 
 # ---------------------------------------
 
@@ -46,6 +47,11 @@ echo "Set background"
 sudo wget -O /usr/share/backgrounds/black.png https://htmlcolorcodes.com/assets/images/colors/black-color-solid-background-1920x1080.png
 gsettings set org.gnome.desktop.background picture-uri file:////usr/share/backgrounds/black.png
 gsettings set org.gnome.desktop.background picture-uri-dark file:////usr/share/backgrounds/black.png
+
+# ---------------------------------------
+
+echo "Install macros"
+sudo curl -fsSL https://raw.githubusercontent.com/RasseTheBoy/Ubuntu-quickstart/main
 
 # ---------------------------------------
 
@@ -116,6 +122,12 @@ si mailspring
 
 # ---------------------------------------
 
+echo "Flathub"
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.gimp.GIMP # GIMP
+
+# ---------------------------------------
+
 echo "Steam"
 sudo dpkg --add-architecture i386
 ni steam-installer
@@ -154,3 +166,7 @@ newgrp docker
 # ---------------------------------------
 
 sudo nala autoremove
+
+# ---------------------------------------
+
+echo "For everything to work properly, you need to restart your computer!"
