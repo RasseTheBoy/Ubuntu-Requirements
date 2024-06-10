@@ -29,17 +29,19 @@ sudo nala update && sudo nala upgrade -y
 
 echo "Install necessary packages"
 ni \
+    gnome-shell-extension-manager \
+    ca-certificates \
+    openssh-server \
+    gnome-tweaks \
+    fastfetch \
+    ifconfig\
+    flatpak \
+    xdotool \
+    btop \
     curl \
+    nano \
     wget \
     git \
-    nano \
-    fastfetch \
-    btop \
-    gnome-tweaks \
-    gnome-shell-extension-manager \
-    xdotool \
-    ca-certificates\
-    flatpak 
 
 # ---------------------------------------
 
@@ -50,7 +52,7 @@ gsettings set org.gnome.desktop.background picture-uri-dark file:////usr/share/b
 
 # ---------------------------------------
 
-# echo "Install macros"
+# echo "Install custom macros and .bash_aliases"
 # sudo curl -fsSL https://raw.githubusercontent.com/RasseTheBoy/Ubuntu-quickstart/main
 
 # ---------------------------------------
@@ -62,6 +64,12 @@ ni brave-browser-beta
 
 echo "Remove Firefox"
 sudo apt remove -y firefox
+
+# ---------------------------------------
+
+echo "AppImages to Downloads"
+wget -O ~/Downloads/beeper.AppImage https://download.beeper.com/linux/appImage/x64
+wget -O ~/Downloads/bitwarden.AppImage "https://vault.bitwarden.com/download/?app=desktop&platform=linux"
 
 # ---------------------------------------
 
@@ -94,16 +102,16 @@ rm ./vscode.deb
 
 echo "VS Code extensions"
 for extension in \
-    GitHub.copilot \
-    ZainChen.json \
-    Nur.just-black \
-    bmalehorn.shell-syntax \
+    DavidAnson.vscode-markdownlint \
     ms-azuretools.vscode-docker \
+    ms-vscode-remote.remote-ssh \
+    yzhang.markdown-all-in-one \
+    bmalehorn.shell-syntax \
     Gruntfuggly.todo-tree \
     ms-python.python \
-    ms-vscode-remote.remote-ssh\
-    DavidAnson.vscode-markdownlint \
-    yzhang.markdown-all-in-one
+    GitHub.copilot \
+    Nur.just-black \
+    ZainChen.json
 do code --install-extension $extension; done
 
 # ---------------------------------------
