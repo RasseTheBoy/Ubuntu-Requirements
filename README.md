@@ -1,11 +1,13 @@
 # Ubuntu-quickstart
 
+![Ubuntu Quickstart Logo](Logo/Ubuntu-quickstart-logo.png)
+
 This `quickstart.sh` file installs all the basic software you would need for Ubuntu (24.04).\
 **You can fork this repository and add or remove software as you see fit.**
 
 [![GitHub release](https://img.shields.io/github/release/RasseTheBoy/Ubuntu-quickstart?include_prereleases=&sort=semver&color=blue)](https://github.com/RasseTheBoy/Ubuntu-quickstart/releases/)
-[![24.04](https://img.shields.io/badge/24.04-working-green)](https://github.com/RasseTheBoy/Ubuntu-quickstart/releases/)
-[![>24.04](https://img.shields.io/badge/%3E24.04-not%20tested-red)](https://github.com/RasseTheBoy/Ubuntu-quickstart/releases/)
+![24.04](https://img.shields.io/badge/24.04-working-green)
+![>24.04](https://img.shields.io/badge/%3E24.04-not%20tested-red)
 
 ## Table of Contents
 
