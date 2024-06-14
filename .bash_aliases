@@ -14,6 +14,17 @@ function _ORANGE_ECHO() {
 alias xx='exit'
 alias ealias='code ~/.bash_aliases && _GREEN_ECHO "Opening code with .bash_aliases file"'
 alias sb='source ~/.bashrc && _GREEN_ECHO "Bashrc sourced!"'
+alias sn='shutdown now'
+alias rn='shutdown -r now'
+
+alias upd='sudo nala update'
+alias upg='sudo nala upgrade'
+alias updg='sudo nala update && sudo nala upgrade'
+
+alias ni='sudo nala install'
+alias niy='sudo nala install -y'
+alias nr='sudo nala remove'
+alias nry='sudo nala remove -y'
 
 
 # Force remove

@@ -102,6 +102,7 @@ rm ./vscode.deb
 
 echo "VS Code extensions"
 for extension in \
+    ms-vscode-remote.remote-containers\
     DavidAnson.vscode-markdownlint \
     ms-azuretools.vscode-docker \
     ms-vscode-remote.remote-ssh \
